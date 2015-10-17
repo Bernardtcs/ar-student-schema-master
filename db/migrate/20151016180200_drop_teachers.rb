@@ -1,8 +1,12 @@
 require_relative '../config'
 
-class CreateTeachers <ActiveRecord::Migration
+class DropTeachers <ActiveRecord::Migration
 
-	def change
+	def up
+		drop_table :teachers
+	end
+
+	def down
 		create_table :teachers do |t|
 			t.string :first_name
 			t.string :last_name

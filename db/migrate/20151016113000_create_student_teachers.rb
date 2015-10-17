@@ -1,3 +1,5 @@
+require_relative '../config'
+
 class CreateStudentTeachers <ActiveRecord::Migration
 	def change
 		create_table :student_teachers do |t|

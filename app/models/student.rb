@@ -1,23 +1,19 @@
 require_relative '../../db/config'
+require_relative 'person'
 
-class Student < ActiveRecord::Base
+class Student < Person
 	has_many :student_teachers
 	has_many :teachers, through: :student_teachers
 # implement your Student model here
-	validates :email, uniqueness: true, format: {with: /.+@.+[.][^.]{2,}\z/}
-	validates :age, numericality: {greater_than_or_equal_to: 5}
-	validates :phone, format: {with: /.*\d.*\d.*\d.*\d.*\d.*\d.*\d.*\d.*\d.*\d/}
-	validates :first_name, presence: true
-	validates :last_name, presence: true
+	# validates :email, uniqueness: true, format: {with: /.+@.+[.][^.]{2,}\z/}
+	# validates :age, numericality: {greater_than_or_equal_to: 5}
+	# validates :phone, format: {with: /.*\d.*\d.*\d.*\d.*\d.*\d.*\d.*\d.*\d.*\d/}
+	# validates :first_name, presence: true
+	# validates :last_name, presence: true
 
-	def name
-		"#{self.first_name} #{self.last_name}"
-	end
 
-	def age
-		now = Date.today
-		age = now.year - birthday.year
-	end
+
+
 end
 
 # a = Student.where(first_name: 'Kyle').first <==cant test this way

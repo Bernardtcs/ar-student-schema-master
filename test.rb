@@ -2,6 +2,8 @@ require 'byebug'
 require_relative 'app/models/student'
 require_relative 'app/models/teacher'
 require_relative 'app/models/student_teacher'
+require_relative 'app/models/person'
+require_relative 'lib/students_importer'
 
 # Student.all
 
@@ -41,3 +43,4 @@ require_relative 'app/models/student_teacher'
 # p f
 # s = StudentTeacher.where(teacher_id: 1)
 # p s
+# StudentsImporter.import
